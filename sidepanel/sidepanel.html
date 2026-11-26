@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Babylist Personalized Universal Search</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+
+  <!-- Top Executive Header -->
+  <div class="panel-header">
+    <div class="header-top-row">
+      <div class="brand">
+        <div class="brand-avatar">⚡</div>
+        <div>
+          <h2>Babylist Personalized Search</h2>
+          <span class="sub">Live Catalog + Chrome Built-in AI</span>
+        </div>
+      </div>
+      <span id="ai-status-badge" class="ai-badge ai-checking" title="Chrome Built-in AI (Gemini Nano)">Checking AI...</span>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs">
+    <button type="button" class="tab-btn active" data-tab="universal-search">🌐 Universal Search</button>
+    <button type="button" class="tab-btn" data-tab="need-search">💬 Addie AI</button>
+    <button type="button" class="tab-btn" data-tab="registry-recs">🎯 Profile &amp; Recs</button>
+    <button type="button" class="tab-btn" data-tab="evals-inspector">🔬 Search Evals</button>
+  </div>
+
+  <!-- TAB 1: Live Universal & Personalized Search -->
+  <div id="tab-universal-search" class="tab-pane active">
+    <div class="initiative-banner">
+      <strong>Live Babylist Catalog + Personalization + 3P Bridge</strong>
+      <span>Queries Babylist's live API and re-ranks results for your active Parent Lifestyle &amp; Registry.</span>
+    </div>
+
+    <div class="search-bar-row">
+      <input type="text" id="uni-search-input" placeholder="Search any baby item or need (stroller, bottle, crib)..." value="stroller" />
+      <button type="button" id="uni-search-btn">Search</button>
+    </div>
+
+    <div id="nlp-intent-badge" class="nlp-intent-badge" style="display:none;"></div>
+
+    <div class="ranking-policy-bar">
+      <span>Lifestyle:</span>
+      <select id="sp-lifestyle-select">
+        <option value="urban">🏙️ Urban / Walk-Up</option>
+        <option value="travel">✈️ Frequent Flyer</option>
+        <option value="twins">👶 Twins / Siblings</option>
+        <option value="budget">💰 Budget &amp; Value</option>
+        <option value="fsa">🏥 FSA / HSA Eligible</option>
+        <option value="default">🌐 Standard (Off)</option>
+      </select>
+      <select id="ranking-strategy-select" title="Ranking Strategy">
+        <option value="balanced">Personalized 1P + 3P</option>
+        <option value="price">Lowest Price</option>
+      </select>
+    </div>
+
+    <div id="search-results-list" class="results-list"></div>
+  </div>
+
+  <!-- TAB 2: Conversational "Need-Based" Search with Addie -->
+  <div id="tab-need-search" class="tab-pane">
+    <div class="initiative-banner">
+      <strong>Conversational Need-Based Search (Addie)</strong>
+      <span>Uses Chrome's on-device Gemini Nano (when enabled) + live catalog context.</span>
+    </div>
+
+    <div class="page-action-bar">
+      <button type="button" id="analyze-page-btn" class="analyze-page-btn">
+        📄 Evaluate Active Product Tab with Chrome AI
+      </button>
+    </div>
+
+    <div class="chat-thread" id="addie-thread">
+      <div class="chat-msg bot">
+        <div class="msg-bubble">
+          👋 Hi! I'm <strong>Addie</strong>. Tell me about your lifestyle or baby needs—or click <strong>Evaluate Active Product Tab</strong> above while browsing Babylist, Amazon, Target, or IKEA.
+        </div>
+      </div>
+    </div>
+
+    <div class="need-chips">
+      <button type="button" class="chip" data-need="Best stroller for urban family">🏙️ Urban Walk-up Stroller</button>
+      <button type="button" class="chip" data-need="Baby has bad acid reflux and colic">🍼 Infant Reflux &amp; Colic</button>
+      <button type="button" class="chip" data-need="Compact car trunk stroller under $300">🚗 Small Trunk Under $300</button>
+      <button type="button" class="chip" data-need="Does Nuna Pipa fit on UPPAbaby Cruz?">🔗 Car Seat Compatibility</button>
+    </div>
+
+    <div class="chat-input-bar">
+      <input type="text" id="addie-input" placeholder="Describe a lifestyle or baby need..." />
+      <button type="button" id="addie-send-btn">Ask</button>
+    </div>
+  </div>
+
+  <!-- TAB 3: Parent Profile & Registry-Aware Recommendations -->
+  <div id="tab-registry-recs" class="tab-pane">
+    <div class="initiative-banner">
+      <strong>Personalization Profile &amp; Registry Signals</strong>
+      <span>Changes here immediately re-rank live search results on Babylist.com.</span>
+    </div>
+
+    <div class="user-profile-mock">
+      <div class="profile-row">
+        <div>
+          <strong>Active Parent Profile</strong>
+          <span class="profile-sub" id="profile-summary-text">Urban / Walk-Up • Expecting (2nd Tri)</span>
+        </div>
+      </div>
+      <div class="profile-controls-grid">
+        <label>Lifestyle:
+          <select id="t3-lifestyle-select">
+            <option value="urban">🏙️ Urban / Walk-Up</option>
+            <option value="travel">✈️ Frequent Flyer</option>
+            <option value="twins">👶 Twins / Siblings</option>
+            <option value="budget">💰 Budget &amp; Value</option>
+            <option value="fsa">🏥 FSA / HSA Eligible</option>
+            <option value="default">🌐 Standard (Off)</option>
+          </select>
+        </label>
+        <label>Baby Stage:
+          <select id="t3-stage-select">
+            <option value="expecting_t2">Expecting (2nd Tri)</option>
+            <option value="newborn">Newborn (0–3m)</option>
+            <option value="infant">Infant (3–9m)</option>
+            <option value="toddler">Toddler (9m+)</option>
+          </select>
+        </label>
+      </div>
+      <div class="checklist-summary">
+        <span>Registered: <strong id="reg-saved-count">2 items</strong></span>
+        <span>Stage: <strong id="profile-stage-label">Expecting (2nd Tri)</strong></span>
+      </div>
+    </div>
+
+    <h4>Registry-Aware Query Interceptor</h4>
+    <div class="registry-aware-box" id="registry-aware-box"></div>
+
+    <h4>Saved Universal Registry Items</h4>
+    <div id="saved-registry-list" class="missing-categories-list"></div>
+  </div>
+
+  <!-- TAB 4: Search Quality & Evals Inspector -->
+  <div id="tab-evals-inspector" class="tab-pane">
+    <div class="initiative-banner">
+      <strong>Search Quality Evals &amp; Guardrails</strong>
+      <span>Live candidate scoring breakdown from the current Babylist search query.</span>
+    </div>
+
+    <div class="eval-metrics-grid">
+      <div class="eval-metric-card">
+        <strong id="eval-latency">--</strong>
+        <span>Live API Latency</span>
+      </div>
+      <div class="eval-metric-card">
+        <strong id="eval-candidates">0</strong>
+        <span>Candidates Scored</span>
+      </div>
+      <div class="eval-metric-card">
+        <strong id="eval-engine-mode" style="color: #0284c7; font-size: 11px;">Checking...</strong>
+        <span>Active LLM Runtime</span>
+      </div>
+    </div>
+
+    <h4>Live Query Scoring Breakdown (Top 8)</h4>
+    <div class="eval-score-table">
+      <div class="eval-row header-row">
+        <span>Candidate Result</span>
+        <span>Match</span>
+        <span>Lifestyle</span>
+        <span>Registry</span>
+        <span>Score</span>
+      </div>
+      <div id="eval-score-rows"></div>
+    </div>
+
+    <h4>Guardrail: "Confidently Wrong" Prevention</h4>
+    <div class="guardrail-box">
+      <div class="guard-item">
+        <span class="icon">i</span>
+        <div>
+          <strong>Car seat compatibility: deferred, not asserted</strong>
+          <p>Addie's prompt forbids guessing adapter fit, and the offline answer points to manufacturer charts instead of naming a model. There is no compatibility database behind this prototype.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../lib/search-core.js"></script>
+  <script src="../babylist-add/overlay.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
