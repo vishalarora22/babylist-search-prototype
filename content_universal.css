@@ -1,0 +1,758 @@
+/* Babylist Personalized Search Bar, Grid Badges & External Store Capture Styling */
+
+.bl-personalized-bar {
+  background: #ffffff;
+  border: 1px solid #fecdd3;
+  border-left: 4px solid #f43f5e;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 12px 0 18px 0;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bl-bar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bl-bar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.bl-ai-dot {
+  background: #fff1f2;
+  color: #e11d48;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.bl-bar-stats {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  background: #f8fafc;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+.bl-bar-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.bl-bar-controls select {
+  margin-left: 4px;
+  padding: 5px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f8fafc;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.bl-guides-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bl-strip-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.bl-guide-pill {
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bl-guide-pill:hover {
+  background: #e0f2fe;
+}
+
+.bl-typo-alert {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12.5px;
+}
+
+.bl-typo-alert a {
+  color: #b45309;
+  text-decoration: underline;
+}
+
+.bl-zero-bridge {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+}
+
+.bl-ext-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.bl-ext-chip {
+  background: #ffffff;
+  border: 1px solid #fda4af;
+  color: #be123c;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Promoted Product Card Styling inside Babylist's Grid */
+.bl-personalized-card {
+  outline: 2px solid #f43f5e !important;
+  outline-offset: 4px;
+  border-radius: 10px !important;
+  position: relative;
+}
+
+.bl-card-badge {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+  z-index: 10 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: calc(100% - 16px) !important;
+  background: linear-gradient(135deg, #f43f5e, #be123c) !important;
+  color: #ffffff !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  padding: 4px 9px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(190, 18, 60, 0.35) !important;
+  pointer-events: none !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.bl-badge-registered {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3) !important;
+}
+
+/* Top Header "Ask Addie" Button Next to Babylist Search */
+.bl-search-nav-slot {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.bl-search-nav-slot > [class*="GlobalNav__SearchBar__"] {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.bl-header-ask-addie {
+  flex-shrink: 0;
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 9999px;
+  border: 1px solid #fda4af;
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  color: #9f1239;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(190, 18, 60, 0.08);
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.bl-header-ask-addie:hover {
+  background: #ffe4e6;
+  border-color: #fb7185;
+  box-shadow: 0 3px 10px rgba(244, 63, 94, 0.18);
+}
+
+.bl-header-ask-addie:focus-visible {
+  outline: 2px solid #e11d48;
+  outline-offset: 2px;
+}
+
+.bl-header-ask-addie.is-open {
+  background: #e11d48;
+  color: #ffffff;
+  border-color: #be123c;
+  box-shadow: 0 3px 10px rgba(225, 29, 72, 0.28);
+}
+
+.bl-header-ask-addie.is-open .bl-header-sparkle {
+  filter: brightness(0) invert(1);
+}
+
+/* Ask Addie Chat Panel (Conversational Carousel Sheet) */
+.bl-addie-panel {
+  position: fixed;
+  bottom: 78px;
+  right: 24px;
+  width: 404px;
+  max-width: calc(100vw - 32px);
+  height: min(620px, calc(100vh - 104px));
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.2);
+  z-index: 2147483646;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #111827;
+}
+
+.bl-addie-panel--header {
+  position: absolute;
+  bottom: auto;
+}
+
+.bl-chat-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.bl-chat-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bl-chat-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.bl-chat-title-row strong {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.bl-beta-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #4b5563;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 1px 7px;
+  border-radius: 6px;
+}
+
+.bl-chat-sub {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.bl-chat-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bl-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.bl-icon-btn:hover {
+  background: #f3f4f6;
+}
+
+.bl-icon-btn--compose {
+  color: #e11d48;
+}
+
+.bl-chat-thread {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px 16px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bl-msg-user {
+  align-self: flex-end;
+  max-width: 82%;
+  background: #f3f4f6;
+  color: #111827;
+  padding: 9px 14px;
+  border-radius: 18px 18px 4px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.bl-msg-bot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.bl-bot-copy {
+  font-size: 13.5px;
+  line-height: 1.48;
+  color: #1f2937;
+}
+
+.bl-bot-note {
+  display: inline-block;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.bl-starter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.bl-starter-chip {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.bl-starter-chip:hover {
+  background: #fff1f2;
+  color: #be123c;
+  border-color: #fda4af;
+}
+
+/* Horizontal Product Carousel */
+.bl-carousel-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.bl-carousel-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 2px 4px 8px 0;
+}
+
+.bl-carousel-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.bl-carousel-track::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+
+.bl-c-card {
+  flex: 0 0 176px;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}
+
+.bl-c-img-box {
+  width: 100%;
+  height: 112px;
+  background: #fafafa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+.bl-c-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.bl-c-store-logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.bl-c-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: fit-content;
+  max-width: 100%;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bl-c-badge--rose {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+.bl-c-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.bl-c-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.32;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 31px;
+}
+
+.bl-c-title:hover {
+  text-decoration: underline;
+}
+
+.bl-c-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #4b5563;
+}
+
+.bl-c-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.bl-c-cta {
+  margin-top: auto;
+  width: 100%;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1.5px solid #9ca3af;
+  background: #ffffff;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.bl-c-cta:hover {
+  background: #f3f4f6;
+  border-color: #6b7280;
+}
+
+.bl-c-cta--added {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.bl-carousel-next {
+  position: absolute;
+  right: -6px;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.16);
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bl-carousel-next:hover {
+  background: #f9fafb;
+}
+
+.bl-bot-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.bl-bot-links a {
+  color: #0369a1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bl-bot-links a:hover {
+  text-decoration: underline;
+}
+
+.bl-feedback-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bl-thumb-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bl-thumb-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.bl-thumb-btn.is-active {
+  color: #e11d48;
+  background: #fff1f2;
+}
+
+.bl-feedback-ack {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* Bottom Floating Pill Composer */
+.bl-chat-footer {
+  flex-shrink: 0;
+  padding: 10px 14px 14px 14px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bl-pill-input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #9ca3af;
+  border-radius: 9999px;
+  padding: 4px 5px 4px 15px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bl-pill-input-box:focus-within {
+  border-color: #111827;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.1);
+}
+
+.bl-pill-input-box input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 28px !important;
+  line-height: 28px !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 13.5px !important;
+  color: #111827 !important;
+  box-shadow: none !important;
+}
+
+.bl-pill-input-box input::placeholder,
+.bl-pill-input-box input:focus::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+.bl-send-circle {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #e11d48;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.bl-send-circle:hover {
+  background: #be123c;
+}
+
+/* External Store Floating Capture Widget */
+.bl-capture-floating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  z-index: 2147483647;
+  overflow: hidden;
+}
+
+.bl-capture-header {
+  background: linear-gradient(135deg, #f43f5e, #be123c);
+  color: #ffffff;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bl-store-tag {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bl-capture-body { padding: 14px; }
+.bl-product-name { font-size: 13px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+.bl-price-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.bl-price-badge { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; font-weight: 800; font-size: 14px; padding: 2px 8px; border-radius: 6px; }
+.bl-compare-note { font-size: 11px; color: #64748b; }
+.bl-capture-btn { width: 100%; background: #f43f5e; color: #ffffff; border: none; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; }
+.bl-success-msg { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 8px 10px; border-radius: 6px; font-size: 12px; margin-top: 8px; text-align: center; }
+
+/* Floating Launcher on Babylist.com */
+.bl-addie-launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483645;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #334155;
+  border-radius: 9999px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bl-addie-launcher:hover { background: #1e293b; }
+.bl-sparkle { color: #fb7185; }

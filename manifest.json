@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "Babylist Personalized Universal Search & Addie AI",
+  "version": "1.2.0",
+  "description": "Live personalized search re-ranking, blended guides, universal multi-retailer search, and Addie AI assistant on Babylist.com.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.babylist.com/*",
+    "https://*.amazon.com/*",
+    "https://*.target.com/*",
+    "https://*.walmart.com/*",
+    "https://*.ikea.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Babylist Personalized Search & Addie AI",
+    "default_popup": "popup/popup.html"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "babylist-add/frame.html",
+        "babylist-add/frame.js"
+      ],
+      "matches": [
+        "https://www.babylist.com/*",
+        "https://*.amazon.com/*",
+        "https://*.target.com/*",
+        "https://*.walmart.com/*",
+        "https://*.ikea.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.babylist.com/*",
+        "https://*.amazon.com/*",
+        "https://*.target.com/*",
+        "https://*.walmart.com/*",
+        "https://*.ikea.com/*"
+      ],
+      "js": [
+        "babylist-add/overlay.js",
+        "content_universal.js"
+      ],
+      "css": [
+        "content_universal.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.babylist.com/bookmarklet/*"
+      ],
+      "js": [
+        "babylist-add/autosubmit.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    }
+  ]
+}
